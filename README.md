@@ -1,5 +1,22 @@
 # API et WebServer du projet thématique (Point de Contrôle Vidéo)
 
+## Prérequis
+
+Il faut avoir node JS d'installer (>v16), pour cela 
+```
+sudo apt update
+cd ~
+curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs
+```
+
+Vous devriez maintenant avoir node JS en version 16
+```
+node -v
+```
+
+
 ## Installation
 
 Il faut d'abord récupérer le projet

@@ -14,7 +14,9 @@ const __dirname = path.dirname(__filename)
 //#region Serveur Web (Front)
 const webServer = express()
 webServer.use('/', express.static(__dirname + '/www'))
-webServer.listen(process.env.WEB_PORT)
+webServer.listen(process.env.WEB_PORT, () => {
+    console.log('---------------Server WEB opérationnel---------------\nhttp://localhost:' + process.env.WEB_PORT)
+})
 //#endregion
 
 //#region Serveur Socket
@@ -34,7 +36,7 @@ io.on('connection', function (socket) {
     })
 })
 socketServ.listen(3000, () => {
-    console.log('---------------Server socket opérationnel---------------')
+    console.log('---------------Serveur socket opérationnel---------------')
 })
 //#endregion
 
@@ -73,7 +75,9 @@ server.use('/course', courseRoutes)
 server.use('/pointControle', pointControleRoutes)
 
 //On écoute sur le port indiquer dans le .env
-server.listen(process.env.SERVER_PORT)
+server.listen(process.env.SERVER_PORT, () => {
+    console.log('---------------Server API opérationnel---------------')
+})
 
 //export du serveur
 export default server

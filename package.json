@@ -1,0 +1,33 @@
+{
+    "name": "api-depense-maintenance",
+    "version": "1.0.0",
+    "description": "api pour l'application de depense en maintenance",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon --experimental-specifier-resolution=node src/app.js",
+        "format:fix": "prettier --write .",
+        "lint:fix": "eslint --fix ."
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@prisma/client": "^4.5.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "nodemon": "^2.0.20",
+        "prisma": "^4.5.0",
+        "socket.io": "^4.5.4",
+        "socket.io-client": "^4.5.4"
+    },
+    "devDependencies": {
+        "eslint": "^8.26.0",
+        "eslint-config-prettier": "^8.5.0",
+        "prettier": "^2.7.1"
+    },
+    "prisma": {
+        "schema": "src/db/schema.prisma",
+        "seed": "node src/db/seed.js"
+    }
+}

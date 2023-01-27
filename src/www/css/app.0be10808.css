@@ -1,0 +1,271 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap);
+#accueil-app {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+}
+#accueil-app,
+#course-container {
+    display: flex;
+    align-items: center;
+}
+#course-container {
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    z-index: 20;
+    margin: 0 80px 0 80px;
+    padding: 40px;
+    -webkit-backdrop-filter: blur(1.35rem);
+    backdrop-filter: blur(1.35rem);
+    color: #fff;
+    border-radius: 1rem;
+    border: 1px solid hsla(0, 0%, 100%, 0.09);
+    gap: 20px;
+}
+#course-container div {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    justify-content: space-between;
+    font-weight: 700;
+    letter-spacing: 0.4rem;
+}
+#course-container div h1 {
+    font-family: Space Grotesk, Helvetica, sans-serif;
+}
+#course-container div span {
+    color: #ffffff85;
+}
+#course-container button,
+#course-container div span {
+    font-family: Inter, Helvetica, sans-serif;
+    font-size: 16px;
+}
+#course-container button {
+    height: 100%;
+    padding: 0 25px;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+#course-container button:hover {
+    transform: scale(1.05);
+}
+#course-container #course-select {
+    height: 100%;
+    flex-grow: 5;
+    padding: 0 20px;
+    font-size: 16px;
+    font-family: Inter, Helvetica, sans-serif;
+    background: hsla(0, 0%, 100%, 0.102);
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+    outline: 0;
+}
+#course-select option {
+    color: #242424;
+}
+#filtre {
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+}
+#diapo,
+#filtre {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#diapo {
+    background-size: cover;
+    background-position: 50%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    animation: fade-in-out 20s ease infinite;
+    -webkit-animation: fade-in-out 20s ease infinite;
+    -moz-animation: fade-in-out 20s ease infinite;
+}
+@keyframes fade-in-out {
+    0%,
+    to {
+        background: url(/img/slide1.553e6820.jpg);
+    }
+    20% {
+        background: url(/img/slide2.20c76d1e.jpg);
+    }
+    40% {
+        background: url(/img/slide3.56503269.jpg);
+    }
+    60% {
+        background: url(/img/slide4.574ca182.jpg);
+    }
+    80% {
+        background: url(/img/slide5.e514c6a1.jpg);
+    }
+}
+@media screen and (max-width: 1024px) {
+    #course-container {
+        flex-direction: column;
+        height: auto;
+    }
+    #course-container div {
+        align-items: center;
+        text-align: center;
+    }
+}
+.list-enter-active,
+.list-leave-active,
+.list-move {
+    transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+.listTemps-enter-active,
+.listTemps-leave-active,
+.listTemps-move {
+    transition: opacity 0.5s ease, transform 0.5s ease, background 2s ease;
+}
+.listTemps-enter-from,
+.listTemps-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+.listTemps-enter-from {
+    background: #26dd20 !important;
+}
+.listTemps-leave-active {
+    position: absolute;
+}
+.container {
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container > table {
+    width: 100%;
+}
+#dashboard-app {
+    height: 100vh;
+    display: flex;
+}
+aside {
+    position: relative;
+    width: 95px;
+}
+aside > div {
+    position: fixed;
+    background: #242424;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+hr {
+    width: 60%;
+}
+#content {
+    min-height: 100vh;
+    flex-grow: 1;
+}
+.nav-icon {
+    padding: 10px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    margin: 0 20px;
+}
+.nav-icon svg {
+    width: 100%;
+}
+.nav-active,
+.nav-icon:hover {
+    background: hsla(0, 0%, 100%, 0.2);
+}
+.contenu h1 {
+    font-family: Space Grotesk, Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    margin-bottom: 40px;
+}
+.contenu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+table {
+    border-spacing: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+table thead td:first-child {
+    border-radius: 0.5rem 0 0 0;
+}
+table thead td:last-child {
+    border-radius: 0 0.5rem 0 0;
+}
+table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 0.5rem;
+}
+table tbody tr:last-child td:last-child {
+    border-radius: 0 0 0.5rem 0;
+}
+table thead {
+    background: #242424;
+    color: #fff;
+    font-weight: 700;
+}
+table td {
+    padding: 15px 20px;
+}
+table tbody tr:nth-child(2n) {
+    background: #f9f9f9;
+}
+table tbody svg {
+    height: 36px;
+}
+#gallerie-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#gallerie-container .tall {
+    grid-row-end: span 2;
+}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Inter, Helvetica, sans-serif;
+}
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}

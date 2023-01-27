@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//Modèle d'un coureur
+model PointControle {
+  id Int @id @default(autoincrement())
+  dossard Int
+  timestamp Int
+  distance Int
+  courseId Int
+
+  course Course @relation(fields: [courseId], references: [id])
+}
+
+//Modèle d'une course
+model Course {
+  id Int @id @default(autoincrement())
+  nom String
+  timestamp Int @default(0)
+  coureurs PointControle[]
+}
+
+//migration (npx prisma migrate dev --name NOM_MIGRATION)

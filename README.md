@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-Il faut avoir node JS d'installer (>v16), pour cela 
+Il faut avoir node JS d'installé (>v16), pour cela 
 ```
 sudo apt update
 cd ~
@@ -15,6 +15,8 @@ Vous devriez maintenant avoir node JS en version 16
 ```
 node -v
 ```
+
+Il faut aussi avoir un service de base de données tel que mysql d'installé
 
 
 ## Installation

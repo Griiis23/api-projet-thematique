@@ -44,9 +44,11 @@ socketServ.listen(3000, () => {
 const server = express()
 
 //Utilisation des cors etc...
-server.use(express.json())
-server.use(express.urlencoded({ extended: false }))
+// server.use(express.json())
+// server.use(express.urlencoded({ extended: false }))
 server.use(cors())
+server.use(express.urlencoded({ limit: '50mb', extended: true }))
+server.use(express.json({ limit: '50mb' }))
 
 //Paramètrage des headers
 server.use((req, res, next) => {

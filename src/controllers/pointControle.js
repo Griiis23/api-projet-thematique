@@ -146,7 +146,36 @@ export default {
 
     //#region On créer un point de controle
     create(req, res) {
-        const { dossard, timestamp, distance, courseId } = req.body
+        const { dossard, timestamp, distance, courseId, image } = req.body
+
+        // Remove the data prefix from the base64 string
+        const base64Data = image.replace(/^data:image\/\w+;base64,/, '')
+
+        // Create a buffer from the base64 data
+        const buffer = Buffer.from(base64Data, 'base64')
+
+        // Generate a unique file name or use any naming convention you prefer
+        const fileName = `image_${Date.now()}.png`
+
+        // Specify the directory where you want to save the image
+        const directoryPath = __dirname + `/www/photos/${courseId}/${dossard}`
+
+        // Create the directory if it doesn't exist
+        if (!fs.existsSync(directoryPath)) {
+            fs.mkdirSync(directoryPath, { recursive: true })
+        }
+
+        // Specify the file path where you want to save the image
+        const filePath = directoryPath + '/' + fileName
+
+        // Write the buffer to the file
+        fs.writeFile(filePath, buffer, (err) => {
+            if (err) {
+                console.error(err)
+                // Handle the error appropriately
+                res.status(500).send('Error writing image to disk')
+            }
+        })
 
         PointControle.findFirst({
             where: {

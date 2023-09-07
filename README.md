@@ -25,7 +25,7 @@ Il faut aussi avoir un service de base de données tel que mysql d'installé
 Il faut d'abord récupérer le projet
 
 ```
-git clone https://github.com/Adrien-Courtois/api-projet-thematique.git
+git clone https://github.com/Griiis23/api-projet-thematique.git
 ```
 
 Déplacer vous dans le dossier du projet
